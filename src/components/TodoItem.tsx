@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import { todosActions, TodoType } from "../store/todo-slice";
 import classes from "./TodoItem.module.css";
 import {
-  FaExclamationTriangle,
-  FaMinusCircle,
+  FaRegFlag,
+  FaFlag,
   FaCheckCircle,
-  FaTimesCircle,
+  FaRegCircle,
   FaTrash,
 } from "react-icons/fa";
 
@@ -32,16 +32,16 @@ const TodoItem = (props: TodoType) => {
       <div className={classes.itemActions}>
         <button onClick={onTogglePriority}>
           {highPriority ? (
-            <FaExclamationTriangle size="15" color={"red"} />
+            <FaFlag size="15" color={"red"} />
           ) : (
-            <FaMinusCircle size="15" />
+            <FaRegFlag size="15" />
           )}
         </button>
         <button onClick={onToggleCompleted}>
           {isCompleted ? (
             <FaCheckCircle size="15" color={"green"} />
           ) : (
-            <FaTimesCircle size="15" />
+            <FaRegCircle size="15" />
           )}
         </button>
         <button onClick={onDeleteHandler}>
