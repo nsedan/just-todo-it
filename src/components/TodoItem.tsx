@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { todosActions } from "../store/todo-slice";
+import { todosActions, TodoType } from "../store/todo-slice";
 
-const TodoItem = (props) => {
+const TodoItem = (props: TodoType) => {
   const { title, highPriority, isCompleted, id } = props;
   const dispatch = useDispatch();
 

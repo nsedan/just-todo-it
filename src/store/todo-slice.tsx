@@ -1,8 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export interface TodoType {
+  id: number;
+  title: string;
+  highPriority: boolean;
+  isCompleted: boolean;
+}
+
+const initialState: TodoType[] = [];
+
 const todoSlice = createSlice({
   name: "todos",
-  initialState: [],
+  initialState,
   reducers: {
     addTodo: (state, action) => {
       const newTodo = action.payload;

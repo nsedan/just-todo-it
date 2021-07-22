@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { todosActions } from "../store/todo-slice";
 
-const AddTodo = () => {
+const AddItem = () => {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
 
-  const handleChange = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
@@ -16,9 +17,9 @@ const AddTodo = () => {
     isCompleted: false,
   };
 
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    dispatch({ type: "ADD_TODO", payload: todo });
+  const onSubmitHandler = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    dispatch(todosActions.addTodo(todo));
     setTitle("");
   };
 
@@ -26,7 +27,7 @@ const AddTodo = () => {
     <form onSubmit={onSubmitHandler}>
       <input
         type="text"
-        onChange={(e) => handleChange(e)}
+        onChange={(e) => onChangeHandler(e)}
         value={title}
         required
       />
@@ -35,4 +36,4 @@ const AddTodo = () => {
   );
 };
 
-export default AddTodo;
+export default AddItem;
