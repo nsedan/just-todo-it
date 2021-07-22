@@ -1,12 +1,12 @@
 import React from "react";
-import AddTodo from "./components/AddTodo";
-import Todos from "./components/Todos";
+import AddItem from "./components/AddItem";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <>
-      <AddTodo />
-      <Todos />
+      <AddItem />
+      <TodoList />
     </>
   );
 }
