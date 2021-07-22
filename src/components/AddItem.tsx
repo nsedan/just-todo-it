@@ -34,7 +34,7 @@ const AddItem = () => {
         placeholder="Insert a task..."
         required
       />
-      <button className={classes.button}>Add</button>
+      <button className="button">Add</button>
     </form>
   );
 };

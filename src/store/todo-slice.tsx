@@ -24,6 +24,9 @@ const todoSlice = createSlice({
       const id = action.payload;
       return state.filter((todo) => todo.id !== id);
     },
+    removeAllTodo: (state) => {
+      return state = initialState;
+    },
     togglePriority: (state, action) => {
       const id = action.payload;
       return state.map((todo) => {
