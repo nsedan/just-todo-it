@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { todosActions, TodoType } from "../store/todo-slice";
+import classes from "./TodoItem.module.css";
 
 const TodoItem = (props: TodoType) => {
   const { title, highPriority, isCompleted, id } = props;
@@ -19,13 +20,13 @@ const TodoItem = (props: TodoType) => {
   };
 
   return (
-    <li>
-      <button onClick={onTogglePriority}>Change Priority</button>
-      <button onClick={onToggleCompleted}>Change Status</button>
-      <button onClick={onDeleteHandler}>x</button>
-      <h3>{title}</h3>
-      <p>Priority: {highPriority ? "High" : "Low"}</p>
-      <p>Status: {isCompleted ? "Completed" : "Pending"}</p>
+    <li className={classes.listItem}>
+      <h3 className={classes.itemTitle}>{title}</h3>
+      <div className={classes.itemActions}>
+        <button onClick={onTogglePriority}>{highPriority ? "!" : "-"}</button>
+        <button onClick={onToggleCompleted}>{isCompleted ? "✓" : "x"}</button>
+        <button onClick={onDeleteHandler}>x</button>
+      </div>
     </li>
   );
 };

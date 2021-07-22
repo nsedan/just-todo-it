@@ -7,7 +7,9 @@ export interface TodoType {
   isCompleted: boolean;
 }
 
-const initialState: TodoType[] = [];
+export type TodoState = TodoType[];
+
+const initialState: TodoState = [];
 
 const todoSlice = createSlice({
   name: "todos",

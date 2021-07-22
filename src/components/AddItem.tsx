@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todosActions } from "../store/todo-slice";
+import classes from "./AddItem.module.css";
 
 const AddItem = () => {
   const [title, setTitle] = useState("");
@@ -24,14 +25,16 @@ const AddItem = () => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className={classes.form} onSubmit={onSubmitHandler}>
       <input
+        className={classes.input}
         type="text"
         onChange={(e) => onChangeHandler(e)}
         value={title}
+        placeholder="Insert a task..."
         required
       />
-      <button>Add Todo</button>
+      <button className={classes.button}>Add</button>
     </form>
   );
 };
