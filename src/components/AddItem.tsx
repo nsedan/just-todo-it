@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todosActions } from "../store/todo-slice";
 import classes from "./AddItem.module.css";
+import { uuid } from "uuidv4";
 
 const AddItem = () => {
   const [title, setTitle] = useState("");
@@ -12,7 +13,7 @@ const AddItem = () => {
   };
 
   const todo = {
-    id: Math.floor(Math.random() * 10000000),
+    id: uuid(),
     title: title,
     highPriority: false,
     isCompleted: false,
