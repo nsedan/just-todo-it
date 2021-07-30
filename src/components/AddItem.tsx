@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todosActions } from "../store/todo-slice";
 import classes from "./AddItem.module.css";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 const AddItem = () => {
   const [title, setTitle] = useState("");
